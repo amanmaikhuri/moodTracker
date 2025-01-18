@@ -1,0 +1,103 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+header{
+    background-color: #87ceeb;
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    position: fixed;
+    top: 0.5rem;
+    left: 20%;
+    right: 20%;
+    border-radius: 0.6rem;
+}
+header:hover {
+    font-size: large;
+}
+
+main{
+    padding-top: 5rem;
+}
+
+#mood-options{
+    height: 1.5rem;
+    width: 6rem;
+    border: 2px solid #87ceeb;
+    border-radius: 0.5rem;
+    font-weight: bold;
+}
+
+#text-box{
+    width: 80vw;
+    height: 45vh;
+    border: 2px solid #87ceeb;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+#submit-btn{
+    height: 2rem;
+    width: 6rem;
+    border: 2px solid #87ceeb;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    padding: 0.25rem;
+}
+#delete-btn{
+    height: 2rem;
+    width: 7rem;
+    border: 2px solid #87ceeb;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    background-color: #4682b4;
+    color: #f0f8ff;
+    padding: 0.2rem;
+}
+
+button:hover{
+    background-color: #4682b4;
+    color: #f0f8ff;
+    border: 2px solid #87ceeb;
+}
+.container{
+    color: #4682b4;
+}
+
+#past-logs{
+    color: #333;
+}
+
+
+ul{
+    list-style-type: none;
+    text-align: left;
+    color: #4682b4;
+    font-style: normal;
+}
+footer{
+    font-style: normal;
+    text-align: left;
+    background-color: #87ceeb;
+    color: #333;
+    padding: 1rem;
+    font-weight: bold;
+}
+
+footer p {
+    text-align: center;
+    font-size: x-small;
+    padding-top: 1rem;
+}
+

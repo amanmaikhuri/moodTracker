@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalmMind</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <span>
+            Calm Mind : Mood Loger
+        </span>
+    </header>
+
+    <main>
+        <div class="container">How are You Feeling ?
+            <p></p>
+            <select name="Mood" id="mood-options">
+                <option value="select">Select</option>
+                <option value="happy">Happy 😊</option>
+                <option value="sad">Sad 😔</option>
+                <option value="neutral">Neutral 😐</option>
+            </select>
+        </div>
+        
+        <h1></h1>
+        <textarea name="text-box" id="text-box" placeholder="Refelect on Your Thoughts Here"></textarea>
+        <p></p>
+        <button id="submit-btn">Submit</button>
+        <button id="delete-btn">Remove Logs</button>
+        <p></p>
+        <hr>
+        <div id="pastLogs">
+            <p id="past-logs">See Your Past mood Logs !
+                <ul id="ul"></ul>
+            </p>
+            
+        </div>
+        
+    </main>
+    <hr>
+    <footer>
+        Made with ❤️ for India 
+        <p>Created by limeLight💗</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
