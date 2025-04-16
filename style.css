@@ -1,103 +1,256 @@
-body{
+/*reset formATting*/
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-    background-color: #f0f8ff;
-    color: #333;
 }
+
+/*show otr hide elements*/
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: block;
+}
+
+/*custom variables*/
+:root{
+    --primary: #3b82f6;
+    --success: #10b981;
+    --mindful: #8b5cf6;
+    --danger: #ef4444;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --bg-light: #f3f4f6;
+    --bg-dark: #1f2937;
+    --input-bg: #fff;
+    --input-border: #d1d5db;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --font-family:'Inter',system-ui ,-apple-system ,sans-serif;
+}
+
+@media (prefer-color-scheme: dark){
+    :root{
+        --text-primary: #f3f4f6;
+        --text-secondary:#9ca3af;
+        --bg-light: #1f2937;
+        --bg-dark: #111827;
+        --input-bg: #374151;
+        --input-border: #4b5563;
+    }
+}
+
+body{
+    font-family: var(--font-family);
+    color: azure;
+    background-color: var(--bg-dark);
+}
+
+button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
 
 header{
-    background-color: #87ceeb;
-    color: white;
-    padding: 1rem;
+    background-color: var(--mindful);
+    color: var(--text-primary);
+    padding: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
+    font-style: italic;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    top: 0.5rem;
-    left: 20%;
-    right: 20%;
+    top: 0;right: 0;left: 0;
     border-radius: 0.6rem;
+    position: relative;
 }
-header:hover {
-    font-size: large;
-}
+
 
 main{
-    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0 7rem 0;
+    margin: 0 auto;
 }
 
-#mood-options{
-    height: 1.5rem;
-    width: 6rem;
-    border: 2px solid #87ceeb;
-    border-radius: 0.5rem;
-    font-weight: bold;
+.mood-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mood-container select{
+    font-size: 0.75rem;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+    background-color: var(--bg-dark);
+    color: azure;
+    font-weight: 600;
+}
+
+.mood-container label{
+    font-size: 0.8rem;
+    justify-self: center;
+    align-self: center;
+    padding: 0.15rem;
+    font-weight: 400;
+}
+
+.log-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 #text-box{
-    width: 80vw;
-    height: 45vh;
-    border: 2px solid #87ceeb;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    background-color: #f0f8ff;
-    color: #333;
+    width: 85vw;
+    height: 50vh;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    background-color: var(--bg-dark);
+    color: azure;
+    border: 1px solid var(--input-border);
 }
 
-#submit-btn{
-    height: 2rem;
-    width: 6rem;
-    border: 2px solid #87ceeb;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    padding: 0.25rem;
+@media (min-width: 600px){
+    .log-container{
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    #text-box{
+        width: 50vw;
+    }
 }
+
+.log-container button{
+    padding: 0.3rem 0.5rem;
+    border: 1px solid var(--mindful);
+    border-radius: 0.3rem;
+    background-color: var(--success);
+    color: var(--input-bg);
+    font-weight: 600;
+    box-shadow: var(--shadow-md);
+}
+
 #delete-btn{
-    height: 2rem;
-    width: 7rem;
-    border: 2px solid #87ceeb;
-    border-radius: 0.5rem;
-    font-weight: bold;
-    background-color: #4682b4;
-    color: #f0f8ff;
-    padding: 0.2rem;
+    background-color: var(--danger);
 }
 
-button:hover{
-    background-color: #4682b4;
-    color: #f0f8ff;
-    border: 2px solid #87ceeb;
-}
-.container{
-    color: #4682b4;
+#delete-btn:hover{
+    background-color: red;
 }
 
-#past-logs{
-    color: #333;
+#submit-btn:hover{
+    background-color: green;
 }
 
-
-ul{
-    list-style-type: none;
-    text-align: left;
-    color: #4682b4;
-    font-style: normal;
+.btn-container{
+    display: flex;
+    gap: 1rem;
 }
-footer{
-    font-style: normal;
-    text-align: left;
-    background-color: #87ceeb;
-    color: #333;
+
+#log-history{
+    max-width: 800px;
+    max-height: 20rem;
     padding: 1rem;
-    font-weight: bold;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    gap: 0.6rem;
 }
 
-footer p {
-    text-align: center;
-    font-size: x-small;
-    padding-top: 1rem;
+.log-content{
+    width: 280px;
+    border: 1px solid var(--primary);
+    box-shadow: var(--shadow-md);
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
+
+.log-content .mood{
+    border: 1px solid var(--mindful);
+    padding: 0.2rem 0.5rem;
+    max-width: max-content;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    font-size: 0.89rem;
+}
+
+.log-content .thoughts{
+    max-height: 18rem;
+    padding: 0.2rem;
+    border-radius: 0.4rem;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    border: 1px solid var(--mindful);
+}
+
+.thoughts::-webkit-scrollbar {
+    width: 6px;
+}
+.thoughts::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 3px;
+}
+
+
+.log-content span{
+    color: var(--success);
+    font-weight: 600;
+    font-style: italic;
+    margin: 0.2rem;
+    padding: 0 0 0 0.1rem;
+}
+
+
+.log-content button{
+    width: 30px;
+    height: 30px;
+    color: var(--success);
+    background: none;
+    border: none;
+    font-size: 1rem;
+}
+
+.log-content .delete-entry{
+    color: var(--danger);
+}
+
+.time{
+    font-size: 0.5rem;
+}
+
+@media (min-width:600px){
+    .log-content{
+        max-width: 500px;
+        font-weight: 600;
+    }
+}
+
+
+footer{
+    background-color: var(--primary);
+    color: var(--text-primary);
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+    font-weight: 600;
+}
+
 
